@@ -1,0 +1,157 @@
+/* Estilos específicos de la aplicación */
+
+/* Transiciones suaves para todos los elementos interactivos */
+button, a, input, textarea, select {
+  transition: all 0.2s ease-out;
+}
+
+/* Estilos para el menú activo */
+.menu-active {
+  background: rgba(243, 146, 0, 0.2);
+  border-left: 3px solid #f39200;
+}
+
+/* Hover effects para cards */
+.card-hover {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Animación para el contador de estadísticas */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-number {
+  animation: countUp 0.5s ease-out forwards;
+}
+
+/* Estilos para el drag and drop de archivos */
+.drop-zone {
+  border: 2px dashed #d1d5db;
+  transition: all 0.2s ease-out;
+}
+
+.drop-zone:hover {
+  border-color: #f39200;
+  background-color: rgba(243, 146, 0, 0.05);
+}
+
+.drop-zone.dragover {
+  border-color: #007b99;
+  background-color: rgba(0, 123, 153, 0.1);
+}
+
+/* Scrollbar personalizada para el sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para badges de estado */
+.badge-estado {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.badge-borrador {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.badge-revision {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.badge-aprobado {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+.badge-publicado {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+/* Animación de pulse suave para notificaciones */
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-soft {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+/* Estilos para inputs focus */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007b99 !important;
+  box-shadow: 0 0 0 3px rgba(0, 123, 153, 0.15) !important;
+}
+
+/* Estilos para el select de subcategorías */
+.subcategoria-item {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.subcategoria-item:hover {
+  background-color: rgba(0, 123, 153, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sidebar-collapsed {
+    transform: translateX(-100%);
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
